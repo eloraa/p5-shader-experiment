@@ -1,7 +1,7 @@
 p5-shader-experiment
 
 Live Link
-https://eloraa.github.io/p5-shader-experiment
+https://p5-shader-ex.0x91.eu.org
 
 Getting Started
 To get you started you can simply clone the repository:
@@ -18,9 +18,9 @@ and install the dependencies
 
 Prerequisites
 You need git to clone the repository. You can get git from
-http://git-scm.com/](http://git-scm.com/
+https://git-scm.com/
 
-A number of node.js tools is necessary to initialize and test the project. You must have node.js and its package manager (npm) installed. You can get them from  [http://nodejs.org/](http://nodejs.org/). The tools/modules used in this project are listed in package.json and include yarn, and other packages.
+A number of node.js tools is necessary to initialize and test the project. You must have node.js and its package manager (npm) installed. You can get them from  https://nodejs.org/. The tools/modules used in this project are listed in package.json and include yarn, and other packages.
 
 Run the Application
 Start development server:
