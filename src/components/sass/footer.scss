@@ -1,0 +1,48 @@
+/* Footer
+   ========================================================================== */
+
+footer {
+    padding: clamp(14px,1.5vw,28px) 0;
+    font-size: .7rem;
+    font-weight: 500;
+    background-image: linear-gradient(to right, #222 0 10%, rgba(255, 255, 255, 0) 10%);
+    background-position: top;
+    background-size: 8px 1px;
+    background-repeat: repeat-x;
+
+    .inner-footer {
+        flex-wrap: wrap;
+        gap: 5px;
+        .icon {
+            height: $icon-height;
+            width: $icon-width;
+            cursor: pointer;
+
+            transform-origin: left center;
+        }
+
+        .date {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+
+        .left_wrapper {
+            gap: 5px;
+            span {
+                display: block;
+                line-height: 0;
+            }
+        }
+        .right_wrapper {
+            span {
+                display: block;
+            }
+        }
+
+        
+    }
+}
+
+html.light footer {
+    font-weight: 600;
+}

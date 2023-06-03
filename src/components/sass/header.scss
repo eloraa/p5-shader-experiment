@@ -1,0 +1,81 @@
+/* Header
+   ========================================================================== */
+
+   header {
+    padding: clamp(8px, .5vw, 10rem) 0;
+    .inner-header {
+        max-height: $header-height;
+        font-size: $logo-height;
+        font-weight: 600;
+
+        .logo {
+            gap: 7px;
+            color: $secondary-accent;
+            font-size: $logo-height;
+            font-weight: 600;
+
+            .logo-path {
+                color: $main-accent;
+                font-size: 0em;
+                display: block;
+                height: $logo-height;
+                width: $logo-width;
+            }
+            .separate_line {
+                transform: scaleY(0);
+                will-change: transform;
+                height: $logo-height + .5px;
+                background: currentColor;
+                width: 3px;
+            }
+            .service-logo {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            .version {
+                opacity: 0;
+                will-change: opacity;
+                background: $main-accent;
+                color: $black;
+                font-size: .6rem;
+                padding: 5px .8rem;
+                border-radius: 3px;
+                line-height: 1.2;
+                font-weight: 600;
+            }
+        }
+
+        .right_wrapper {
+            span {
+                display: block;
+                color: $main-accent;
+                height: 24px;
+                width: 24px;
+
+                a {
+                    color: inherit;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+
+html.light header {
+    .inner-header {
+        .logo {
+            color: $main-accent;
+            .version {
+                color: $accent-white;
+                font-weight: 800;
+            }
+        }
+        .right_wrapper {
+            span a {
+                color: $main-accent;
+                background-color: transparent;
+            }
+        }
+    }
+}

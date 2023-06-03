@@ -1,0 +1,28 @@
+doctype html
+html(lang='en')
+    include utils/_vars
+
+    include head
+
+    body
+        ._container(noverflow)
+            block header
+            include header
+
+            block main
+            
+                .flex-fill
+                main
+                    .container
+                        .wrapper
+                            .flex-column
+                                .project webpack-pug-boilerplate
+                                .button 
+                                    a(href="https://github.com/eloraa", rel="noreferrer") visit GitHub profile
+                                .info.info-only the site will be automatically redirected to the GitHub profile
+
+            .flex-fill
+            block footer
+                include footer
+            
+            include utils/_preloader

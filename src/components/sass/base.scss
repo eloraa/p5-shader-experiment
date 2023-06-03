@@ -1,0 +1,43 @@
+@import "../lib/css/normalize/8.0.1/normalize";
+@import "../sass/colors";
+@import "../sass/vars";
+@import "../sass/root";
+@import "../sass/res";
+
+main:not(.error) {
+    max-width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    canvas {
+        width: 100%;
+    }
+}
+
+.__preloader {
+    position: fixed;
+    inset: 0;
+
+    padding-bottom: clamp(14px,1.5vw,28px);
+    font-size: 0.7rem;
+    font-weight: 500;
+    background-image: linear-gradient(to right, #222 0 10%, rgba(255, 255, 255, 0) 10%);
+    background-position: top;
+    background-size: 8px 1px;
+    background-repeat: repeat-x;
+    .preloader_text {
+        opacity: 0;
+        font-size: 1.5rem;
+        font-weight: 200;
+        text-align: center;
+        text-transform: lowercase;
+    }
+    .preloader_footer {
+        gap: 5px;
+        .preloader_el {
+            height: $icon-height;
+            width: $icon-width;
+        }
+    }
+
+}
