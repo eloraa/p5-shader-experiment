@@ -1,0 +1,13 @@
+{
+    "name": "Elora",
+    "short_name": "elora",
+    "icons": [{
+        "src": "./android-chrome.png",
+        "sizes": "512x512",
+        "purpose": "any maskable"
+    }],
+    "background_color": "#171714",
+    "theme_color": "#171714",
+    "display": "fullscreen",
+    "start_url": "/"
+}
