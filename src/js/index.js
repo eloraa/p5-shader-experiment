@@ -101,6 +101,19 @@ APP.init = () => {
     new p5((e) => APP.canvas.init(e), APP.canvas.parent)
 
     APP.canvas.uniformWidth = { value: 0 }
+
+    if(window.location.href.includes('#debug')) {
+        document.body.classList.add('debug')
+        APP.canvas.u_color = { value: .001 }
+        APP.__root.querySelector('main').insertAdjacentHTML('beforeend', '<div class="u"><input class="u_color" placeholder="a value" type="number"></div>')
+        APP.__root.querySelector('input.u_color').addEventListener('keypress', e => (e.key === 'Enter' && e.keyCode === 13) && new Animation({ onUpdate: function() {
+            APP.canvas.shader.setUniform('u_coloring',  APP.canvas.u_color.value);
+        } }).to(APP.canvas.u_color, 5, {
+            value: e.target.value.match(/^\d*\.\d+/) ? e.target.value : parseFloat('.' + e.target.value)
+        }))
+    }
+    
+    
     new Animation({ onUpdate: function() {
         APP.canvas.shader.setUniform('u_width',  APP.canvas.uniformWidth.value);
     } }).to(APP.canvas.uniformWidth, 2, {
