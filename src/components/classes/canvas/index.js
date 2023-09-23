@@ -19,6 +19,9 @@ export default class Canvas {
         this.shader.setUniform('u_width', this.sketch.width / 1.5 < 370 ? this.sketch.width / 1.5 : 370);
         this.shader.setUniform('u_coloring', .05);
         this.shader.setUniform('u_speed', .1);
+        this.shader.setUniform('u_circ', .05);
+        this.shader.setUniform('u_step', 1.5);
+        this.shader.setUniform('u_collision', 1000);
     }
 
     draw() {
@@ -31,7 +34,7 @@ export default class Canvas {
         this.shader.setUniform('u_ratio', this.sketch.width / this.sketch.height);
         this.shader.setUniform('u_point', [this.pointer.x, this.pointer.y])
         this.shader.setUniform('u_time', this.sketch.frameCount * 0.01);
-          
+
         this.sketch.rect(-((this.sketch.width / 2) / 1.5), -((this.sketch.height / 2) / 1.5), 0, 0);
     }
 
@@ -46,5 +49,5 @@ export default class Canvas {
         this.sketch.draw = this.draw.bind(this)
         this.sketch.windowResized = this.resize.bind(this)
     }
-  
+
   }

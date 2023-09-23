@@ -105,15 +105,50 @@ APP.init = () => {
     if(window.location.href.includes('#debug')) {
         document.body.classList.add('debug')
         APP.canvas.u_color = { value: .001 }
-        APP.__root.querySelector('main').insertAdjacentHTML('beforeend', '<div class="u"><input class="u_color" placeholder="a value" type="number"></div>')
+        APP.canvas.u_speed = { value: .001 }
+        APP.canvas.u_width = { value: .001 }
+        APP.canvas.u_step = { value: .001 }
+        APP.canvas.u_circ = { value: .001 }
+        APP.canvas.u_collision = { value: .001 }
+        APP.__root.querySelector('#u_u').insertAdjacentHTML('beforeend', '<div class="u"><input class="u_color uu" placeholder="color" type="number"></div>')
+        APP.__root.querySelector('#u_u').insertAdjacentHTML('beforeend', '<div class="u"><input class="u_speed uu" placeholder="speed" type="number"></div>')
+        APP.__root.querySelector('#u_u').insertAdjacentHTML('beforeend', '<div class="u"><input class="u_width uu" placeholder="fragment" type="number"></div>')
+        APP.__root.querySelector('#u_u').insertAdjacentHTML('beforeend', '<div class="u"><input class="u_circ uu" placeholder="mask" type="number"></div>')
+        APP.__root.querySelector('#u_u').insertAdjacentHTML('beforeend', '<div class="u"><input class="u_step uu" placeholder="step" type="number"></div>')
+        APP.__root.querySelector('#u_u').insertAdjacentHTML('beforeend', '<div class="u"><input class="u_collision uu" placeholder="collision" type="number"></div>')
         APP.__root.querySelector('input.u_color').addEventListener('keypress', e => (e.key === 'Enter' && e.keyCode === 13) && new Animation({ onUpdate: function() {
             APP.canvas.shader.setUniform('u_coloring',  APP.canvas.u_color.value);
         } }).to(APP.canvas.u_color, 5, {
             value: e.target.value.match(/^\d*\.\d+/) ? e.target.value : parseFloat('.' + e.target.value)
         }))
+        APP.__root.querySelector('input.u_speed').addEventListener('keypress', e => (e.key === 'Enter' && e.keyCode === 13) && new Animation({ onUpdate: function() {
+            APP.canvas.shader.setUniform('u_speed',  APP.canvas.u_speed.value);
+        } }).to(APP.canvas.u_speed, 5, {
+            value: e.target.value
+        }))
+        APP.__root.querySelector('input.u_width').addEventListener('keypress', e => (e.key === 'Enter' && e.keyCode === 13) && new Animation({ onUpdate: function() {
+            APP.canvas.shader.setUniform('u_width',  APP.canvas.u_width.value);
+        } }).to(APP.canvas.u_width, 5, {
+            value: e.target.value
+        }))
+        APP.__root.querySelector('input.u_circ').addEventListener('keypress', e => (e.key === 'Enter' && e.keyCode === 13) && new Animation({ onUpdate: function() {
+            APP.canvas.shader.setUniform('u_circ',  APP.canvas.u_circ.value);
+        } }).to(APP.canvas.u_circ, 5, {
+            value: e.target.value
+        }))
+        APP.__root.querySelector('input.u_step').addEventListener('keypress', e => (e.key === 'Enter' && e.keyCode === 13) && new Animation({ onUpdate: function() {
+            APP.canvas.shader.setUniform('u_step',  APP.canvas.u_step.value);
+        } }).to(APP.canvas.u_step, 5, {
+            value: e.target.value
+        }))
+        APP.__root.querySelector('input.u_collision').addEventListener('keypress', e => (e.key === 'Enter' && e.keyCode === 13) && new Animation({ onUpdate: function() {
+            APP.canvas.shader.setUniform('u_collision',  APP.canvas.u_collision.value);
+        } }).to(APP.canvas.u_collision, 5, {
+            value: e.target.value
+        }))
     }
-    
-    
+
+
     new Animation({ onUpdate: function() {
         APP.canvas.shader.setUniform('u_width',  APP.canvas.uniformWidth.value);
     } }).to(APP.canvas.uniformWidth, 2, {

@@ -78,15 +78,23 @@
 	}
 }
 
-.u {
+#u_u {
     position: fixed;
-    left: calc(50% - 100px);
-    width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+    bottom: 2px;
+}
+
+.u {
+    position: relative;
     border-bottom: 2px solid #fff;
     padding-right: 2.3rem;
 }
 
-input.u_color {
+input.uu {
     width: 100%;
     background: none;
     outline: none;
@@ -95,14 +103,14 @@ input.u_color {
 }
 
 
-input.u_color,
-input.u_color::placeholder,
+input.uu,
+input.uu::placeholder,
 .u::after {
     font-size: .85rem;
     color: #fff;
     font-weight: bold;
 }
-input.u_color::placeholder, .u::after {
+input.uu::placeholder, .u::after {
     color: #fff;
     font-size: .65rem;
     opacity: .8;

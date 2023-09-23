@@ -1,8 +1,8 @@
 #ifdef GL_ES
 precision mediump float;
-#endif  
-   
-   
+#endif
+
+
 varying vec2 vTexCoord;
 
 uniform float u_ratio;
@@ -10,6 +10,9 @@ uniform float u_time;
 uniform float u_width;
 uniform float u_coloring;
 uniform float u_speed;
+uniform float u_circ;
+uniform float u_step;
+uniform float u_collision;
 uniform vec2 u_point;
 
 //    https://gist.github.com/patriciogonzalezvivo/670c22f3966e662d2f83
@@ -66,7 +69,7 @@ uniform vec2 u_point;
 
     void main () {
         vec2 uv = vTexCoord;
-        uv /= (1000. / u_width);
+        uv /= (u_collision / u_width);
         uv.y /= u_ratio;
 
         vec2 mouse = vTexCoord - u_point;
@@ -75,11 +78,11 @@ uniform vec2 u_point;
         float t = u_time * u_speed;
 
         float noise = get_noise(uv, t);
-        noise *= circle_s(mouse, .05);
+        noise *= circle_s(mouse, u_circ);
 
         const float STEPS = 5.;
         float stepped_noise = floor(noise * STEPS) / STEPS;
-        float d = -.5 * pow(stepped_noise, 1.5);
+        float d = -.5 * pow(stepped_noise, u_step);
 
         vec3 hsv = vec3(u_coloring + d * .4, 1., 1.);
         vec3 col = hsv2rgb(hsv);
