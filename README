@@ -9,13 +9,13 @@ Getting Started
 To get you started you can simply clone the repository:
 
 
-➜(command)✘ git clone https://github.com/eloraa/p5-shader-experiment
+     git clone https://github.com/eloraa/p5-shader-experiment
 
 
 and install the dependencies
 
 
-➜(command)✘ yarn
+     yarn
 
 
 Prerequisites
@@ -28,10 +28,10 @@ Run the Application
 Start development server:
 
 
-➜(command)✘ yarn dev
+     yarn dev
 
 
 Build for Production
 Build the Application for production:
 
-➜(command)✘ yarn build
+     yarn build
